@@ -1,0 +1,4 @@
+[user]
+	email = bjarne.bakk@el-watch.com
+[credential]
+	helper = cache --timeout=86400
