@@ -1,0 +1,118 @@
+[$Version]
+update_info=kwinrules.upd:replace-placement-string-to-enum,kwinrules.upd:use-virtual-desktop-ids
+
+[1]
+Description=Application settings for slack
+clientmachine=localhost
+desktops=e05c2a2e-cdec-4608-873a-e579f41d91aa
+desktopsrule=3
+position=741,1440
+positionrule=4
+size=960,1080
+sizerule=3
+wmclass=slack
+wmclassmatch=1
+
+[2]
+Description=Window settings for Microsoft Teams
+clientmachine=localhost
+desktops=e05c2a2e-cdec-4608-873a-e579f41d91aa
+desktopsrule=3
+position=1488,668
+size=960,1080
+title=Microsoft Teams
+titlematch=2
+wmclassmatch=1
+
+[21bd84ee-6758-4e3a-b600-d038586ebd24]
+Description=Application settings for neovide
+clientmachine=localhost
+noborder=true
+noborderrule=5
+wmclass=neovide
+wmclassmatch=1
+
+[3]
+Description=Outlook pwa settings
+desktops=e05c2a2e-cdec-4608-873a-e579f41d91aa
+desktopsrule=3
+title=Outlook (PWA)
+wmclass=chromium
+wmclassmatch=1
+
+[4efee4c3-7a7a-4504-9ba5-61b72a9d0b04]
+Description=Settings for microsoft teams - preview
+desktops=cc777bb7-77d0-4721-b343-e1aacf595a0f
+desktopsrule=3
+position=960,34
+positionrule=3
+size=960,1046
+sizerule=3
+wmclass=microsoft teams - preview
+wmclassmatch=1
+
+[559ee1dd-b6af-4d2e-9cc2-4c0bd38e82d0]
+Description=Outlook pwa settings
+desktops=e05c2a2e-cdec-4608-873a-e579f41d91aa
+desktopsrule=3
+title=Outlook (PWA)
+wmclass=chromium
+wmclassmatch=1
+
+[5d8cf41e-3683-4d00-8ecb-a3eb3f3669a0]
+Description=Window settings for kitty
+clientmachine=localhost
+noborder=true
+noborderrule=3
+title=bjarne@bjarne-20xk007dmx:~
+titlematch=1
+types=1
+wmclass=kitty
+wmclassmatch=1
+
+[96049f78-d3b7-4276-9288-043df0af7ae7]
+Description=Window settings for Microsoft Teams
+desktops=e05c2a2e-cdec-4608-873a-e579f41d91aa
+desktopsrule=3
+title=Microsoft Teams
+titlematch=2
+wmclassmatch=1
+
+[General]
+count=3
+rules=1,2,3
+
+[c47b123e-279e-42f5-a3a2-df095c2c2ccf]
+Description=Settings for kitty
+noborder=true
+noborderrule=2
+wmclass=kitty
+wmclassmatch=1
+
+[cc5a2c1e-3948-47a1-9c8d-536ca91afe65]
+Description=Application settings for vscodium
+clientmachine=localhost
+desktops=c70b14b4-d773-4a31-b665-a656eaf59f9f
+desktopsrule=3
+wmclass=vscodium
+wmclassmatch=1
+
+[d2e93d7a-c88f-4643-aef9-2852e477ab08]
+Description=Application settings for slack
+clientmachine=localhost
+desktops=cc777bb7-77d0-4721-b343-e1aacf595a0f
+desktopsrule=3
+position=0,34
+positionrule=3
+size=960,1046
+sizerule=3
+wmclass=slack
+wmclassmatch=1
+
+[dec18898-7b3e-48cf-b267-22c38148b104]
+Description=New window settings
+ignoregeometry=true
+ignoregeometryrule=2
+position=0,0
+positionrule=4
+screenrule=4
