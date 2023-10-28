@@ -1,0 +1,4 @@
+neovim
+peek
+flameshot
+obsidian
