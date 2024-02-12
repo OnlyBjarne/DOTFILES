@@ -1,0 +1,2 @@
+alias nvimconfig="nvim ~/.config/nvim '+cd %:p:h'"
+alias neuron="cd ~/Programming/Work/neuronsensors/"
