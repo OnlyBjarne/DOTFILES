@@ -71,10 +71,11 @@ DEFAULT_USER=$USER
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git asdf)
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.cargo/env
+source $HOME/.zsh_aliases
 
 # User configuration
 
@@ -104,6 +105,8 @@ if [[ -n $SSH_CONNECTION ]]; then
 source /usr/share/nvm/init-nvm.sh
 alias nvimconfig="nvim ~/.config/nvim '+cd %:p:h'"
 
+alias cd=z;
+
 prompt_dir() {
 	prompt_segment blue $CURRENT_FG '%c'
 }
@@ -114,4 +117,5 @@ prompt_dir() {
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-setxkbmap -option caps:escape
+
+eval "$(zoxide init zsh)"

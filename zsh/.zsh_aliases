@@ -1,2 +1,4 @@
 alias nvimconfig="nvim ~/.config/nvim '+cd %:p:h'"
 alias neuron="cd ~/Programming/Work/neuronsensors/"
+
+alias dev="tmux new-session nvim\; new-window\; new-window lazygit\; select-window -t 1"
