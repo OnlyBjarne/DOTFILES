@@ -17,8 +17,6 @@ if [[ -n $SSH_CONNECTION ]]; then
  fi
 
 
-export NVM_DIR=~/.nvm
-[[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh" --no-use
 
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -103,3 +101,23 @@ eval "$(zoxide init --cmd cd zsh)"
 
 # Enable benchmarking
 # zprof
+
+# fnm
+FNM_PATH="/home/bjarne/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/bjarne/.local/share/fnm:$PATH"
+  eval "$(fnm env --use-on-cd --shell zsh)"
+fi
+
+# Created by `pipx` on 2024-09-24 06:53:08
+# export PATH="$PATH:/home/bjarne/.local/bin"
+
+# export PYENV_ROOT="$HOME/.pyenv"
+# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
+
+
+# asdf
+. /opt/asdf-vm/asdf.sh
+
+
