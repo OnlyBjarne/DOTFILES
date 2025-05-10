@@ -17,20 +17,7 @@ require("lazy").setup({
 		},
 	},
 
-	{ -- Useful plugin to show you pending keybinds.
-		"folke/which-key.nvim",
-		event = "VimEnter",
-		config = function()
-			require("which-key").setup()
-
-			require("which-key").register({
-				["<leader>d"] = { name = "[D]ocument", _ = "which_key_ignore" },
-				["<leader>f"] = { name = "[F]ind (search)", _ = "which_key_ignore" },
-				["<leader>w"] = { name = "[W]orkspace", _ = "which_key_ignore" },
-				["<leader>l"] = { name = "[L]sp", _ = "which_key_ignore" },
-			})
-		end,
-	},
+	require("plugins/whichkey"),
 
 	{ -- Fuzzy Finder (files, lsp, etc)
 		"nvim-telescope/telescope.nvim",
@@ -147,6 +134,7 @@ require("lazy").setup({
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
+			"saghen/blink.cmp",
 
 			{ "j-hui/fidget.nvim", opts = {} },
 
@@ -202,11 +190,12 @@ require("lazy").setup({
 			})
 
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
-			capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+
+			-- NOTE: This is to disable nvim-cmp
+			-- capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 			local nvim_lsp = require("lspconfig")
 
 			local servers = {
-				-- tsserver = {},
 				lua_ls = {
 					-- cmd = {...},
 					-- filetypes = { ...},
@@ -225,11 +214,6 @@ require("lazy").setup({
 				denols = {
 					root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
 				},
-
-				tsserver = {
-					root_dir = nvim_lsp.util.root_pattern("package.json"),
-					single_file_support = false,
-				},
 				volar = {
 					filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
 					init_options = {
@@ -238,6 +222,7 @@ require("lazy").setup({
 						},
 					},
 				},
+				ts_ls = {},
 				elixirls = {},
 				html = { filetypes = { "html", "hbs", "heex" } },
 				tailwindcss = {
@@ -281,7 +266,9 @@ require("lazy").setup({
 						-- This handles overriding only values explicitly passed
 						-- by the server configuration above. Useful when disabling
 						-- certain features of an LSP (for example, turning off formatting for tsserver)
+
 						server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
+						server.capabilities = require("blink.cmp").get_lsp_capabilities(server.capabilities)
 						require("lspconfig")[server_name].setup(server)
 					end,
 				},
@@ -316,9 +303,11 @@ require("lazy").setup({
 			},
 		},
 	},
+	require("plugins/blink"),
 
 	{ -- Autocompletion
 		"hrsh7th/nvim-cmp",
+		enabled = false,
 		event = "InsertEnter",
 		dependencies = {
 			{

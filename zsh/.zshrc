@@ -116,8 +116,4 @@ fi
 # [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 # eval "$(pyenv init -)"
 
-
-# asdf
-. /opt/asdf-vm/asdf.sh
-
-
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
