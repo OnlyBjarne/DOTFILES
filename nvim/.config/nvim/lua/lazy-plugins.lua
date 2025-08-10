@@ -2,7 +2,7 @@
 -- NOTE: Here is where you install your plugins.
 require("lazy").setup({
 	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
-	{ -- Adds git related signs to the gutter, as well as utilities for managing changes
+	{            -- Adds git related signs to the gutter, as well as utilities for managing changes
 		"lewis6991/gitsigns.nvim",
 		opts = {
 			signs = {
@@ -83,7 +83,6 @@ require("lazy").setup({
 		},
 	},
 	require("plugins/blink"),
-	require("plugins/nvim-cmp"),
 	require("plugins/theme"),
 	require("plugins/todo-comments"),
 	{ -- Collection of various small independent plugins/modules

@@ -23,6 +23,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
 				layout_config = {
 					prompt_position = "top",
 				},
+				winblend = 0,
 				sorting_strategy = "ascending",
 				mappings = {
 					i = {

@@ -7,6 +7,7 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+
 vim.opt.mouse = "a"
 
 vim.opt.showmode = false
@@ -35,6 +36,21 @@ vim.opt.listchars = { tab = "| ", trail = "·", nbsp = "␣" }
 vim.opt.inccommand = "split"
 vim.opt.cursorline = true
 
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 15
 
 vim.opt.cmdheight = 0
+
+vim.opt.shiftwidth = 4
+
+vim.opt.tabstop = 4
+
+local hover = vim.lsp.buf.hover
+---@diagnostic disable-next-line: duplicate-set-field
+vim.lsp.buf.hover = function()
+    return hover({
+        border = "rounded",
+        -- max_width = 100,
+        max_width = math.floor(vim.o.columns * 0.7),
+        max_height = math.floor(vim.o.lines * 0.7),
+    })
+end

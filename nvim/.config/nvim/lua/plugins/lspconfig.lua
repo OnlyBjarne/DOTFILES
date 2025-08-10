@@ -2,50 +2,40 @@ return {
 	"neovim/nvim-lspconfig",
 	config = function()
 		require("mason").setup()
+		vim.lsp.config('lua_ls', {
+			settings = {
+				Lua = {
+					runtime = { version = 'Lua 5.1' },
+					diagnostics = {
+						globals = { 'bit', 'vim', 'it', 'describe', 'before_each', 'after_each' },
+					},
+				},
+			},
+		})
 
-		local servers = {
-			ts_ls = {
-				init_options = {
-					plugins = {
-						{
-							name = "@vue/typescript-plugin",
-							location = vim.fn.expand(
-								"$MASON/packages/vue-language-server/node_modules/@vue/language-server"
-							),
-							languages = { "vue" },
-						},
+		local vue_ls_path = vim.fn.expand("$MASON/packages/vue-language-server")
+		local vue_plugin_path = vue_ls_path .. "/node_modules/@vue/language-server"
+
+		-- Now configure ts_ls (TypeScript) to load the Vue plugin
+		require("lspconfig").ts_ls.setup({
+			init_options = {
+				plugins = {
+					{
+						name = "@vue/typescript-plugin",
+						location = vue_plugin_path,
+						languages = { "vue" },
 					},
 				},
 			},
-			volar = {
-				init_options = {
-					vue = {
-						hybridMode = false,
-					},
-				},
-			},
+			filetypes = { "typescript", "javascript", "vue" },
+		})
+
+		require("lspconfig").tailwindcss.setup {
+			init_options = {
+			  filetypes = {"svelte", "vue", "html"}
+			}
+
 		}
-
-		local ensure_installed = vim.tbl_keys(servers or {})
-		vim.list_extend(ensure_installed, {
-			"stylua", -- Used to format Lua code
-		})
-
-		local capabilities = require("blink.cmp").get_lsp_capabilities()
-
-		require("mason-lspconfig").setup({
-			automatic_installation = false,
-			handlers = {
-				function(server_name)
-					local server = servers[server_name] or {}
-					-- This handles overriding only values explicitly passed
-					-- by the server configuration above. Useful when disabling
-					-- certain features of an LSP (for example, turning off formatting for ts_ls)
-					server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-					require("lspconfig")[server_name].setup(server)
-				end,
-			},
-		})
 
 		require("blink.cmp").setup({
 			completion = {
@@ -93,8 +83,8 @@ return {
 	end,
 	dependencies = {
 		"rafamadriz/friendly-snippets",
-		{ "mason-org/mason-lspconfig.nvim", version = "^1.0.0" },
-		{ "mason-org/mason.nvim", version = "^1.0.0" },
-		{ "saghen/blink.cmp", build = "cargo build --release" },
+		{ "mason-org/mason-lspconfig.nvim", version = "^2.0.0" },
+		{ "mason-org/mason.nvim",           version = "^2.0.0" },
+		{ "saghen/blink.cmp",               build = "cargo build --release" },
 	},
 }
