@@ -110,7 +110,7 @@ if [ -d "$FNM_PATH" ]; then
 fi
 
 # Created by `pipx` on 2024-09-24 06:53:08
-# export PATH="$PATH:/home/bjarne/.local/bin"
+export PATH="$PATH:/home/bjarne/.local/bin"
 
 # export PYENV_ROOT="$HOME/.pyenv"
 # [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"

@@ -13,29 +13,33 @@ return {
 			},
 		})
 
+
 		local vue_ls_path = vim.fn.expand("$MASON/packages/vue-language-server")
 		local vue_plugin_path = vue_ls_path .. "/node_modules/@vue/language-server"
 
 		-- Now configure ts_ls (TypeScript) to load the Vue plugin
-		require("lspconfig").ts_ls.setup({
-			init_options = {
-				plugins = {
-					{
-						name = "@vue/typescript-plugin",
-						location = vue_plugin_path,
-						languages = { "vue" },
-					},
-				},
-			},
-			filetypes = { "typescript", "javascript", "vue" },
-		})
+		require("lspconfig").ts_ls.setup {
+                init_options = {
+                    plugins = {
+                        {
+                            name = '@vue/typescript-plugin',
+                            location = vim.fn.expand("$MASON/packages/vue-language-server/node_modules/@vue/language-server"),
+                            languages = { 'vue' },
+                        },
+                    },
+                },
+                filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'svelte' },
+                }
+
+		require("lspconfig").eslint.setup {}
 
 		require("lspconfig").tailwindcss.setup {
 			init_options = {
 			  filetypes = {"svelte", "vue", "html"}
 			}
-
 		}
+
+		require("lspconfig").pyright.setup {}
 
 		require("blink.cmp").setup({
 			completion = {
@@ -58,7 +62,14 @@ return {
 					[vim.diagnostic.severity.INFO] = "",
 					[vim.diagnostic.severity.WARN] = "",
 				},
-			},
+			}, float = {
+                    focusable = true,
+                    style = 'minimal',
+                    border = 'rounded',
+                    source = 'always',
+                    header = '',
+                    prefix = '',
+                },
 			update_in_insert = true,
 			virtual_text = true,
 		})
@@ -80,6 +91,8 @@ return {
 				vim.keymap.set("n", "<space>la", vim.lsp.buf.code_action, opts)
 			end,
 		})
+
+
 	end,
 	dependencies = {
 		"rafamadriz/friendly-snippets",
