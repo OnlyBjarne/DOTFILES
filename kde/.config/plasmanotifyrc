@@ -1,37 +1,24 @@
-[Applications][balena-etcher]
-Seen=true
-
 [Applications][chromium]
-Seen=true
-
-[Applications][com.microsoft.Teams]
-Seen=true
-
-[Applications][com.spotify.Client]
-Seen=true
-ShowBadges=false
-ShowInHistory=false
-
-[Applications][com.uploadedlobster.peek]
-Seen=true
-
-[Applications][electron]
 Seen=true
 
 [Applications][firefox]
 Seen=true
 
-[Applications][org.kde.discover]
-ShowInHistory=false
+[Applications][io.github.seadve.Kooha]
+Seen=true
+
+[Applications][obsidian]
+Seen=true
 
 [Applications][slack]
 Seen=true
 
-[Applications][solaar]
+[Applications][teams-for-linux]
 Seen=true
 
-[Applications][teams]
+[Applications][zen]
 Seen=true
 
-[Notifications]
-PopupPosition=TopCenter
+[Services][donationmessage]
+ShowInHistory=false
+ShowPopups=false

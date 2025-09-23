@@ -1,6 +1,3 @@
-[$Version]
-update_info=filepicker.upd:filepicker-remove-old-previews-entry,fonts_global.upd:Fonts_Global,fonts_global_toolbar.upd:Fonts_Global_Toolbar,icons_remove_effects.upd:IconsRemoveEffects,kwin.upd:animation-speed,style_widgetstyle_default_breeze.upd:StyleWidgetStyleDefaultBreeze
-
 [ColorEffects:Disabled]
 ChangeSelectionColor=
 Color=56,56,56
@@ -15,143 +12,170 @@ IntensityEffect=2
 [ColorEffects:Inactive]
 ChangeSelectionColor=true
 Color=112,111,110
-ColorAmount=0.025000000000000001
+ColorAmount=0.025
 ColorEffect=2
-ContrastAmount=0.10000000000000001
+ContrastAmount=0.1
 ContrastEffect=2
 Enable=false
 IntensityAmount=0
 IntensityEffect=0
 
 [Colors:Button]
-BackgroundAlternate=64,69,82
-BackgroundNormal=60,68,84
-DecorationFocus=76,86,106
-DecorationHover=76,86,106
+BackgroundAlternate=114,90,174
+BackgroundNormal=41,44,48
+DecorationFocus=146,110,228
+DecorationHover=146,110,228
+ForegroundActive=146,110,228
+ForegroundInactive=161,169,177
+ForegroundLink=209,199,242
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=252,252,252
+ForegroundPositive=39,174,96
+ForegroundVisited=155,89,182
+
+[Colors:Complementary]
+BackgroundAlternate=30,87,116
+BackgroundNormal=32,35,38
+DecorationFocus=146,110,228
+DecorationHover=146,110,228
+ForegroundActive=146,110,228
+ForegroundInactive=161,169,177
+ForegroundLink=209,199,242
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=252,252,252
+ForegroundPositive=39,174,96
+ForegroundVisited=155,89,182
+
+[Colors:Header]
+BackgroundAlternate=32,35,38
+BackgroundNormal=41,44,48
+DecorationFocus=146,110,228
+DecorationHover=146,110,228
+ForegroundActive=146,110,228
+ForegroundInactive=161,169,177
+ForegroundLink=209,199,242
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=252,252,252
+ForegroundPositive=39,174,96
+ForegroundVisited=155,89,182
+
+[Colors:Header][Inactive]
+BackgroundAlternate=41,44,48
+BackgroundNormal=32,35,38
+DecorationFocus=61,174,233
+DecorationHover=61,174,233
 ForegroundActive=61,174,233
-ForegroundInactive=102,106,115
-ForegroundLink=41,128,185
-ForegroundNegative=191,97,106
-ForegroundNeutral=208,135,112
-ForegroundNormal=216,222,233
-ForegroundPositive=163,190,140
-ForegroundVisited=82,148,226
+ForegroundInactive=161,169,177
+ForegroundLink=29,153,243
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=252,252,252
+ForegroundPositive=39,174,96
+ForegroundVisited=155,89,182
 
 [Colors:Selection]
-BackgroundAlternate=29,153,243
-BackgroundNormal=76,86,106
-DecorationFocus=76,86,106
-DecorationHover=76,86,106
-ForegroundActive=46,52,64
-ForegroundInactive=216,222,233
-ForegroundLink=253,188,75
-ForegroundNegative=191,97,106
-ForegroundNeutral=208,135,112
-ForegroundNormal=216,222,233
-ForegroundPositive=163,190,140
-ForegroundVisited=189,195,199
+BackgroundAlternate=108,83,166
+BackgroundNormal=108,83,166
+DecorationFocus=146,110,228
+DecorationHover=146,110,228
+ForegroundActive=146,110,228
+ForegroundInactive=255,255,255
+ForegroundLink=118,54,221
+ForegroundNegative=176,55,69
+ForegroundNeutral=198,92,0
+ForegroundNormal=255,255,255
+ForegroundPositive=23,104,57
+ForegroundVisited=155,89,182
 
 [Colors:Tooltip]
-BackgroundAlternate=47,52,63
-BackgroundNormal=53,57,69
-DecorationFocus=76,86,106
-DecorationHover=76,86,106
-ForegroundActive=61,174,233
-ForegroundInactive=102,106,115
-ForegroundLink=41,128,185
-ForegroundNegative=191,97,106
-ForegroundNeutral=208,135,112
-ForegroundNormal=211,218,227
-ForegroundPositive=163,190,140
-ForegroundVisited=82,148,226
+BackgroundAlternate=32,35,38
+BackgroundNormal=41,44,48
+DecorationFocus=146,110,228
+DecorationHover=146,110,228
+ForegroundActive=146,110,228
+ForegroundInactive=161,169,177
+ForegroundLink=209,199,242
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=252,252,252
+ForegroundPositive=39,174,96
+ForegroundVisited=155,89,182
 
 [Colors:View]
-BackgroundAlternate=46,52,64
-BackgroundNormal=59,66,82
-DecorationFocus=76,86,106
-DecorationHover=76,86,106
-ForegroundActive=76,86,106
-ForegroundInactive=102,106,115
-ForegroundLink=94,129,172
-ForegroundNegative=191,97,106
-ForegroundNeutral=208,135,112
-ForegroundNormal=216,222,233
-ForegroundPositive=163,190,140
-ForegroundVisited=124,183,255
+BackgroundAlternate=29,31,34
+BackgroundNormal=20,22,24
+DecorationFocus=146,110,228
+DecorationHover=146,110,228
+ForegroundActive=146,110,228
+ForegroundInactive=161,169,177
+ForegroundLink=146,110,228
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=252,252,252
+ForegroundPositive=39,174,96
+ForegroundVisited=155,89,182
 
 [Colors:Window]
-BackgroundAlternate=47,52,63
-BackgroundNormal=46,52,64
-DecorationFocus=76,86,106
-DecorationHover=76,86,106
-ForegroundActive=61,174,233
-ForegroundInactive=102,106,115
-ForegroundLink=41,128,185
-ForegroundNegative=191,97,106
-ForegroundNeutral=208,135,112
-ForegroundNormal=216,222,233
-ForegroundPositive=163,190,140
-ForegroundVisited=143,188,187
+BackgroundAlternate=41,44,48
+BackgroundNormal=32,35,38
+DecorationFocus=146,110,228
+DecorationHover=146,110,228
+ForegroundActive=146,110,228
+ForegroundInactive=161,169,177
+ForegroundLink=209,199,242
+ForegroundNegative=218,68,83
+ForegroundNeutral=246,116,0
+ForegroundNormal=252,252,252
+ForegroundPositive=39,174,96
+ForegroundVisited=155,89,182
 
 [DirSelect Dialog]
-DirSelectDialog Size=844,598
-History Items[$e]=file:$HOME/Programming/Work/neuronsensors/apps/functions/builds,file:$HOME/Pictures,file:$HOME/.config/SuperSlicer,file:$HOME/Pictures/sveits
+DirSelectDialog Size=820,584
+Splitter State=\x00\x00\x00\xff\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x00\x8c\x00\x00\x02\xa8\x00\xff\xff\xff\xff\x01\x00\x00\x00\x01\x00
 
 [General]
-BrowserApplication=firefox.desktop
-ColorSchemeHash=d05680ca25bbbbf09a8b5f36923ee7f2b1117fbf
-Name[en_GB]=Breeze Light
-Name=Breeze Light
+BrowserApplication=chromium.desktop
+ColorSchemeHash=2c3f86428c11011a7c64ee1e7f47c274d498ff10
 TerminalApplication=kitty
 TerminalService=kitty.desktop
-UseSystemBell=true
-XftAntialias=true
-XftHintStyle=hintfull
-XftSubPixel=none
-font=Noto Sans,10,-1,5,50,0,0,0,0,0
-menuFont=Noto Sans,10,-1,5,50,0,0,0,0,0
-shadeSortColumn=true
-smallestReadableFont=Noto Sans,8,-1,5,50,0,0,0,0,0
-toolBarFont=Noto Sans,10,-1,5,50,0,0,0,0,0
-widgetStyle=Breeze
 
 [Icons]
-Theme=Papirus-Dark
+Theme=Papirus
 
 [KDE]
-ColorScheme=BreezeLight
-LookAndFeelPackage=Nordic-darker
-SingleClick=false
-contrast=4
+AnimationDurationFactor=0.08838834764831843
+LookAndFeelPackage=org.kde.breezedark.desktop
 
 [KFileDialog Settings]
 Allow Expansion=false
 Automatically select filename extension=true
-Breadcrumb Navigation=true
+Breadcrumb Navigation=false
 Decoration position=2
 LocationCombo Completionmode=5
 PathCombo Completionmode=5
-Show Bookmarks=false
+Preview Width=140
 Show Full Path=false
 Show Inline Previews=true
-Show Preview=false
+Show Preview=true
 Show Speedbar=true
 Show hidden files=false
-Sort by=Date
+Sort by=Size
 Sort directories first=true
 Sort hidden files last=false
-Sort reversed=true
+Sort reversed=false
 Speedbar Width=138
 View Style=DetailTree
 
 [KScreen]
-ScreenScaleFactors=eDP=1;HDMI-A-0=1;DisplayPort-0=1;DisplayPort-1=1;DisplayPort-2=1;DisplayPort-3=1;DisplayPort-4=1;
+ScreenScaleFactors=eDP-1=1;DP-3=1;DP-5=1;
 
 [WM]
-activeBackground=47,52,63
-activeBlend=47,52,63
-activeFont=Noto Sans,10,-1,5,50,0,0,0,0,0
-activeForeground=211,218,227
-inactiveBackground=47,52,63
-inactiveBlend=47,52,63
-inactiveForeground=102,106,115
+activeBackground=39,44,49
+activeBlend=252,252,252
+activeForeground=252,252,252
+inactiveBackground=32,36,40
+inactiveBlend=161,169,177
+inactiveForeground=161,169,177
