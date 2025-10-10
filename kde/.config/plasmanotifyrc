@@ -19,9 +19,6 @@ Seen=true
 [Applications][zen]
 Seen=true
 
-[DoNotDisturb]
-NotificationSoundsMuted=false
-
 [Services][donationmessage]
 ShowInHistory=false
 ShowPopups=false

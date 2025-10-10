@@ -17,8 +17,10 @@ return {
 		local vue_ls_path = vim.fn.expand("$MASON/packages/vue-language-server")
 		local vue_plugin_path = vue_ls_path .. "/node_modules/@vue/language-server"
 
+
+
 		-- Now configure ts_ls (TypeScript) to load the Vue plugin
-		require("lspconfig").ts_ls.setup {
+		local ts_config = {
                 init_options = {
                     plugins = {
                         {
@@ -31,15 +33,22 @@ return {
                 filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'svelte' },
                 }
 
-		require("lspconfig").eslint.setup {}
+		vim.lsp.enable("ts_ls")
+		vim.lsp.config("ts_ls", ts_config)
 
-		require("lspconfig").tailwindcss.setup {
+		vim.lsp.enable "eslint" 
+
+		vim.lsp.enable "expert"
+
+		vim.lsp.enable("tailwindcss") 
+		local tailwind = {
 			init_options = {
 			  filetypes = {"svelte", "vue", "html"}
 			}
 		}
+		vim.lsp.config("tailwindcss",tailwind)
 
-		require("lspconfig").pyright.setup {}
+		vim.lsp.config("pyright",tailwind)
 
 		require("blink.cmp").setup({
 			completion = {

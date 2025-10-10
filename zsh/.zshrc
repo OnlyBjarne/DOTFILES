@@ -7,7 +7,7 @@
 # Path to your oh-my-zsh installation.
 source $HOME/.zsh_aliases
 
-source $HOME/.cargo/env
+#source $HOME/.cargo/env
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -15,8 +15,6 @@ if [[ -n $SSH_CONNECTION ]]; then
  else
    export EDITOR='nvim'
  fi
-
-
 
 # Set the directory we want to store zinit and plugins
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -30,7 +28,6 @@ fi
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
-eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/base.yaml)"
 
 # Add in zsh plugins
 zinit light zsh-users/zsh-syntax-highlighting
@@ -87,14 +84,6 @@ alias c='clear'
 
 # alias cd=z;
 
-# bun completions
-[ -s "/home/bjarne/.bun/_bun" ] && source "/home/bjarne/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
@@ -108,12 +97,19 @@ if [ -d "$FNM_PATH" ]; then
   export PATH="/home/bjarne/.local/share/fnm:$PATH"
   eval "$(fnm env --use-on-cd --shell zsh)"
 fi
-
-# Created by `pipx` on 2024-09-24 06:53:08
 export PATH="$PATH:/home/bjarne/.local/bin"
+
+eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/base.yaml)"
+# Created by `pipx` on 2024-09-24 06:53:08
 
 # export PYENV_ROOT="$HOME/.pyenv"
 # [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 # eval "$(pyenv init -)"
 
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /home/bjarne/.dart-cli-completion/zsh-config.zsh ]] && . /home/bjarne/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+

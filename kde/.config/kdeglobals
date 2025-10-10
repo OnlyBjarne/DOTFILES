@@ -141,12 +141,20 @@ BrowserApplication=chromium.desktop
 ColorSchemeHash=2c3f86428c11011a7c64ee1e7f47c274d498ff10
 TerminalApplication=kitty
 TerminalService=kitty.desktop
+XftAntialias=true
+XftHintStyle=hintslight
+XftSubPixel=rgb
+fixed=JetBrainsMono Nerd Font,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+font=JetBrainsMono Nerd Font,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+menuFont=JetBrainsMono Nerd Font,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+smallestReadableFont=JetBrainsMono Nerd Font,8,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
+toolBarFont=JetBrainsMono Nerd Font,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 
 [Icons]
 Theme=Papirus
 
 [KDE]
-AnimationDurationFactor=0.08838834764831843
+AnimationDurationFactor=0.25
 LookAndFeelPackage=org.kde.breezedark.desktop
 
 [KFileDialog Settings]
@@ -156,7 +164,7 @@ Breadcrumb Navigation=false
 Decoration position=2
 LocationCombo Completionmode=5
 PathCombo Completionmode=5
-Preview Width=140
+Preview Width=320
 Show Full Path=false
 Show Inline Previews=true
 Show Preview=true
@@ -175,6 +183,7 @@ ScreenScaleFactors=eDP-1=1;DP-3=1;DP-5=1;
 [WM]
 activeBackground=39,44,49
 activeBlend=252,252,252
+activeFont=JetBrainsMono Nerd Font,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1
 activeForeground=252,252,252
 inactiveBackground=32,36,40
 inactiveBlend=161,169,177

@@ -10,7 +10,7 @@ MPROCS_COMMAND="mprocs" # The command to run mprocs
 # Commands for each window
 NVIM_COMMAND="nvim"
 LAZYGIT_COMMAND="lazygit"
-FALLBACK_COMMAND="bash" # Command if mprocs.yaml is not found
+FALLBACK_COMMAND="$SHELL" # Command if mprocs.yaml is not found
 
 # Desired window index to land on when attaching (0-indexed)
 # Window 0: nvim
