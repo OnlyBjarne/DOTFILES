@@ -7,6 +7,8 @@
 # Path to your oh-my-zsh installation.
 source $HOME/.zsh_aliases
 
+LC_ALL=en_GB.UTF-8
+
 #source $HOME/.cargo/env
 
 # Preferred editor for local and remote sessions
@@ -51,11 +53,16 @@ zinit cdreplay -q
 
 
 # Keybindings
-bindkey -e
+#
+
+bindkey -v
+
 bindkey '^k' history-search-backward
 bindkey '^j' history-search-forward
 bindkey '^[w' kill-region
 bindkey '^y' autosuggest-accept
+
+export KEYTIMEOUT=1
 
 # History
 HISTSIZE=5000

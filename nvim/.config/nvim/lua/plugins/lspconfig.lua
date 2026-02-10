@@ -2,6 +2,7 @@ return {
 	"neovim/nvim-lspconfig",
 	config = function()
 		require("mason").setup()
+		require("mason-lspconfig").setup()
 		vim.lsp.config('lua_ls', {
 			settings = {
 				Lua = {
@@ -12,43 +13,20 @@ return {
 				},
 			},
 		})
+		vim.lsp.enable "lua_ls"
 
 
-		local vue_ls_path = vim.fn.expand("$MASON/packages/vue-language-server")
-		local vue_plugin_path = vue_ls_path .. "/node_modules/@vue/language-server"
-
-
-
-		-- Now configure ts_ls (TypeScript) to load the Vue plugin
-		local ts_config = {
-                init_options = {
-                    plugins = {
-                        {
-                            name = '@vue/typescript-plugin',
-                            location = vim.fn.expand("$MASON/packages/vue-language-server/node_modules/@vue/language-server"),
-                            languages = { 'vue' },
-                        },
-                    },
-                },
-                filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'svelte' },
-                }
-
-		vim.lsp.enable("ts_ls")
-		vim.lsp.config("ts_ls", ts_config)
-
-		vim.lsp.enable "eslint" 
-
+		vim.lsp.enable "ts_ls"
 		vim.lsp.enable "expert"
 
-		vim.lsp.enable("tailwindcss") 
-		local tailwind = {
-			init_options = {
-			  filetypes = {"svelte", "vue", "html"}
-			}
-		}
-		vim.lsp.config("tailwindcss",tailwind)
 
-		vim.lsp.config("pyright",tailwind)
+		vim.lsp.enable "eslint"
+		vim.lsp.enable "tailwindcss"
+
+
+
+
+		vim.lsp.enable("pyright")
 
 		require("blink.cmp").setup({
 			completion = {

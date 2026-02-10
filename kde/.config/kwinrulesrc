@@ -31,6 +31,18 @@ titlematch=2
 wmclass=chromium
 wmclassmatch=1
 
+[3cf8d188-5ea2-4c9c-b59f-d9e2d6f53793]
+Description=Window settings for teams-for-linux
+clientmachine=localhost
+size=1684,1376
+sizerule=3
+title=(2) Chat | Ingar Fredriksen | Microsoft Teams
+types=1
+windowrole=browser-window
+windowrolematch=1
+wmclass=teams-for-linux
+wmclassmatch=1
+
 [3f3c4b2d-d7fc-4cdf-b58f-23c85307149b]
 Description=Window settings for Microsoft Teams
 desktops=53c23f95-ab52-405d-ae64-9034b69830e3
@@ -45,6 +57,17 @@ desktops=e05c2a2e-cdec-4608-873a-e579f41d91aa
 desktopsrule=3
 title=Outlook (PWA)
 wmclass=chromium
+wmclassmatch=1
+
+[48fdca25-3f62-4fc5-9b6b-d409e5786088]
+Description=Window settings for Picture-in-Picture
+above=true
+aboverule=2
+desktops=\\0
+desktopsrule=2
+title=Picture-in-Picture
+titlematch=1
+wmclass=firefox
 wmclassmatch=1
 
 [4efee4c3-7a7a-4504-9ba5-61b72a9d0b04]
@@ -86,8 +109,8 @@ titlematch=2
 wmclassmatch=1
 
 [General]
-count=3
-rules=1,3,3f3c4b2d-d7fc-4cdf-b58f-23c85307149b
+count=5
+rules=3cf8d188-5ea2-4c9c-b59f-d9e2d6f53793,1,3,3f3c4b2d-d7fc-4cdf-b58f-23c85307149b,48fdca25-3f62-4fc5-9b6b-d409e5786088
 
 [a137e9a0-6eae-405b-bc70-054b1c4c9074]
 Description=Application settings for firefoo
