@@ -1,6 +1,9 @@
 [Applications][chromium]
 Seen=true
 
+[Applications][com.github.wwmm.easyeffects]
+Seen=true
+
 [Applications][firefox]
 Seen=true
 
