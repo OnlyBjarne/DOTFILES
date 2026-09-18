@@ -15,7 +15,6 @@ workspace "div"
 
 workspace "chat"  
 
-
 input {
     keyboard {
         xkb {
@@ -283,7 +282,7 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "waybar"
+spawn-at-startup "noctalia"
 
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
@@ -356,9 +355,18 @@ layer-rule {
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
-    geometry-corner-radius 4
+    geometry-corner-radius 8
     clip-to-geometry true
 }
+
+// Floating Noctalia settings window.
+window-rule {
+  match app-id="dev.noctalia.Noctalia"
+  open-floating true
+  default-column-width { fixed 1080; }
+  default-window-height { fixed 920; }
+}
+
 
 binds {
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
@@ -378,10 +386,15 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
     Mod+B hotkey-overlay-title="Run an Application: Firefox" { spawn "firefox"; }
     Mod+N hotkey-overlay-title="Run an Application: Obsidian" { spawn "obsidian"; }
+
+    Mod+Space { spawn-sh "noctalia msg panel-toggle launcher"; }
+    Mod+S { spawn-sh "noctalia msg panel-toggle control-center"; }
+    Mod+Comma { spawn-sh "noctalia msg settings-toggle"; }
 
 
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
@@ -394,6 +407,9 @@ binds {
     XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.1-"; }
     XF86AudioMute        allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+    XF86AudioNext        allow-when-locked=true { spawn-sh "noctalia msg media next"; }
+    XF86AudioPrev     allow-when-locked=true { spawn-sh "noctalia msg media prev" ;}
+    XF86AudioPlay     allow-when-locked=true { spawn-sh "noctalia msg media toggle" ;}
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
@@ -526,15 +542,12 @@ binds {
     Mod+7 { focus-workspace 7; }
     Mod+8 { focus-workspace 8; }
     Mod+9 { focus-workspace 9; }
-    Mod+Ctrl+1 { move-column-to-workspace 1; }
-    Mod+Ctrl+2 { move-column-to-workspace 2; }
-    Mod+Ctrl+3 { move-column-to-workspace 3; }
-    Mod+Ctrl+4 { move-column-to-workspace 4; }
-    Mod+Ctrl+5 { move-column-to-workspace 5; }
-    Mod+Ctrl+6 { move-column-to-workspace 6; }
-    Mod+Ctrl+7 { move-column-to-workspace 7; }
-    Mod+Ctrl+8 { move-column-to-workspace 8; }
-    Mod+Ctrl+9 { move-column-to-workspace 9; }
+    Mod+Shift+1 { move-column-to-workspace 1; }
+    Mod+Shift+2 { move-column-to-workspace 2; }
+    Mod+Shift+3 { move-column-to-workspace 3; }
+    Mod+Shift+4 { move-column-to-workspace 4; }
+    Mod+Shift+5 { move-column-to-workspace 5; }
+    Mod+Shift+6 { move-column-to-workspace 6; }
 
     // Alternatively, there are commands to move just a single window:
     // Mod+Ctrl+1 { move-window-to-workspace 1; }
@@ -549,7 +562,7 @@ binds {
     Mod+BracketRight { consume-or-expel-window-right; }
 
     // Consume one window from the right to the bottom of the focused column.
-    Mod+Comma  { consume-window-into-column; }
+    // Mod+Comma  { consume-window-into-column; }
     // Expel the bottom window from the focused column to the right.
     Mod+Period { expel-window-from-column; }
 
@@ -592,16 +605,8 @@ binds {
     // rather than stacked on top of each other.
     Mod+W { toggle-column-tabbed-display; }
 
-    // Actions to switch layouts.
-    // Note: if you uncomment these, make sure you do NOT have
-    // a matching layout switch hotkey configured in xkb options above.
-    // Having both at once on the same hotkey will break the switching,
-    // since it will switch twice upon pressing the hotkey (once by xkb, once by niri).
-    // Mod+Space       { switch-layout "next"; }
-    // Mod+Shift+Space { switch-layout "prev"; }
-
-    Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
+    Mod+Shift+S { screenshot; }
+    Mod+Print { screenshot-screen; }
     Alt+Print { screenshot-window; }
 
     // Applications such as remote-desktop clients and software KVM switches may

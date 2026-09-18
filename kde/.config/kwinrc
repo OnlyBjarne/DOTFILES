@@ -32,8 +32,6 @@ TabletMode=off
 
 [NightColor]
 Active=true
-LatitudeAuto=59.7442
-LongitudeAuto=10.0214
 Mode=Constant
 NightTemperature=4100
 
@@ -112,7 +110,7 @@ tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"wi
 
 [Tiling][4ab87fc6-5de5-4a11-b620-6f70eb665f9e][3f0e06a8-b49e-435d-9876-ddab9a1150e2]
 padding=4
-tiles={"layoutDirection":"horizontal","tiles":[{"width":0.798046875},{"width":0.20195312499999996}]}
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.5296875},{"width":0.4703125}]}
 
 [Tiling][4ab87fc6-5de5-4a11-b620-6f70eb665f9e][3f2d4ead-16ab-481f-87f7-7cce24995f73]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.73984375},{"width":0.26015625}]}
@@ -150,11 +148,11 @@ tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"wi
 
 [Tiling][4ab87fc6-5de5-4a11-b620-6f70eb665f9e][ee2775f6-da4f-4947-8411-0ab7632f05d3]
 padding=4
-tiles={"layoutDirection":"horizontal","tiles":[{"width":0.7394531249999998},{"width":0.2605468750000002}]}
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.586328125},{"width":0.413671875}]}
 
 [Tiling][4ab87fc6-5de5-4a11-b620-6f70eb665f9e][f0a9ff1a-d84f-4145-a738-46fda58d46da]
 padding=4
-tiles={"layoutDirection":"horizontal","tiles":[{"width":0.15625},{"width":0.328125},{"width":0.515625}]}
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.8191406250000001},{"width":0.18085937499999993}]}
 
 [Tiling][4ab87fc6-5de5-4a11-b620-6f70eb665f9e][ffa3d2a6-2106-4aa0-a1f8-66ba8f0467e6]
 padding=4

@@ -15,6 +15,8 @@ return {
 		})
 		vim.lsp.enable "lua_ls"
 
+		vim.lsp.enable "json_ls"
+
 
 		vim.lsp.enable "ts_ls"
 		vim.lsp.enable "expert"
@@ -22,6 +24,9 @@ return {
 
 		vim.lsp.enable "eslint"
 		vim.lsp.enable "tailwindcss"
+		vim.lsp.enable "eslint"
+
+		vim.lsp.enable "svelte"
 
 
 
@@ -49,14 +54,15 @@ return {
 					[vim.diagnostic.severity.INFO] = "",
 					[vim.diagnostic.severity.WARN] = "",
 				},
-			}, float = {
-                    focusable = true,
-                    style = 'minimal',
-                    border = 'rounded',
-                    source = 'always',
-                    header = '',
-                    prefix = '',
-                },
+			},
+			float = {
+				focusable = true,
+				style = 'minimal',
+				border = 'rounded',
+				source = 'always',
+				header = '',
+				prefix = '',
+			},
 			update_in_insert = true,
 			virtual_text = true,
 		})
@@ -78,8 +84,6 @@ return {
 				vim.keymap.set("n", "<space>la", vim.lsp.buf.code_action, opts)
 			end,
 		})
-
-
 	end,
 	dependencies = {
 		"rafamadriz/friendly-snippets",

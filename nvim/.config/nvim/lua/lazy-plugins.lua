@@ -2,7 +2,7 @@
 -- NOTE: Here is where you install your plugins.
 require("lazy").setup({
 	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
-	{ -- Adds git related signs to the gutter, as well as utilities for managing changes
+	{                -- Adds git related signs to the gutter, as well as utilities for managing changes
 		"lewis6991/gitsigns.nvim",
 		opts = {
 			signs = {
@@ -80,6 +80,7 @@ require("lazy").setup({
 			end,
 			formatters_by_ft = {
 				lua = { "stylua" },
+				svelte = { "prettier" }
 			},
 		},
 	},
@@ -140,10 +141,10 @@ require("lazy").setup({
 				"typescript" }
 			local alreadyInstalled = require('nvim-treesitter.config').get_installed()
 			local parsersToInstall = vim.iter(ensure_installed)
-			    :filter(function(parser)
-				    return not vim.tbl_contains(alreadyInstalled, parser)
-			    end)
-			    :totable()
+				:filter(function(parser)
+					return not vim.tbl_contains(alreadyInstalled, parser)
+				end)
+				:totable()
 			require('nvim-treesitter').install(parsersToInstall)
 		end
 	},
